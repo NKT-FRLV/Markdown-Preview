@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import './App.css';
+import Markdown from 'react-markdown';
 import Editor from './components/Editor';
 import Preview from './components/Preview';
 import Header from './components/Header';
+
+// import {mockMarkdown} from './mocks/mock'
 
 function App() {
   const [markdownInput, setMarkdownInput] = useState('');
@@ -18,7 +21,7 @@ function App() {
         <Header />
         <div className="flex w-150 gap-4 ">
           <Editor onChange={handleChange} inputValue={markdownInput} />
-          <Preview />
+          <Preview htmlOutput={<Markdown>{markdownInput}</Markdown>}/>
         </div>
       </div>
     </div>
