@@ -21,12 +21,12 @@ console.log(htmlOutput)
 						{htmlOutput ? (
 							<div className="flex items-center gap-1 text-green-200 text-sm">
 								<HiOutlineCheckCircle size={16} />
-								<span>Готово</span>
+								<span>Ready</span>
 							</div>
 						) : (
 							<div className="flex items-center gap-1 text-yellow-200 text-sm">
 								<HiOutlineExclamationCircle size={16} />
-								<span>Ожидание</span>
+								<span>Waiting</span>
 							</div>
 						)}
 					</div>
@@ -36,7 +36,7 @@ console.log(htmlOutput)
 						<div className="flex items-center justify-center h-full text-gray-400">
 							<div className="text-center">
 								<HiOutlineEye size={48} className="mx-auto mb-4 opacity-50" />
-								<p>Предварительный просмотр появится здесь</p>
+								<p>Preview will appear here</p>
 							</div>
 						</div>
 					)}

@@ -22,12 +22,12 @@ const Editor = ({ onChange, inputValue }: EditorProps) => {
             className="w-full h-full min-h-[400px] rounded-xl p-4 bg-white/90 backdrop-blur-sm border-0 resize-none focus:outline-none focus:ring-4 focus:ring-white/50 focus:bg-white transition-all duration-300 shadow-inner text-gray-800 placeholder-gray-500 hover:bg-white/95"
             value={inputValue}
             onChange={onChange}
-            placeholder="Начните писать ваш Markdown..."
+            placeholder="Start writing your Markdown..."
           ></textarea>
           {!inputValue && (
             <div className="absolute top-16 left-8 text-gray-400 pointer-events-none flex items-center gap-2">
               <HiOutlinePencilAlt size={16} />
-              <span className="text-sm">Начните с # для заголовка</span>
+              <span className="text-sm">Start with # for a title</span>
             </div>
           )}
         </div>

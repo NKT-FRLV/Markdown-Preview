@@ -33,7 +33,7 @@ function App() {
 					/>
 					<Preview
 						htmlOutput={
-							<Markdown
+							markdownInput.length > 0 ? <Markdown
 								remarkPlugins={[
 									[remarkGfm, { singleTilde: false }],
 									remarkMath,
@@ -64,6 +64,7 @@ function App() {
 							>
 								{markdownInput}
 							</Markdown>
+							: null
 						}
 					/>
 				</div>
