@@ -10,6 +10,8 @@ import Header from './components/Header';
 function App() {
   const [markdownInput, setMarkdownInput] = useState('');
 
+  console.log(markdownInput)
+
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
     setMarkdownInput(value);
@@ -19,9 +21,9 @@ function App() {
     <div className="App h-screen w-full p-4 bg-slate-300">
       <div className="main-Wrapper flex flex-col  ">
         <Header />
-        <div className="flex w-150 gap-4 ">
+        <div className="flex w-full gap-4 ">
           <Editor onChange={handleChange} inputValue={markdownInput} />
-          <Preview htmlOutput={<Markdown>{markdownInput}</Markdown>}/>
+          <Preview htmlOutput={<Markdown>{markdownInput}</Markdown>} />
         </div>
       </div>
     </div>
