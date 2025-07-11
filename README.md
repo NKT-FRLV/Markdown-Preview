@@ -1,7 +1,5 @@
 ![Screenshot 2025-07-11 at 6 58 41 PM](https://github.com/user-attachments/assets/b3a6080a-09d3-491e-977a-d370afb4fdf5)
 
-Got it! You want a README that showcases your project in a way that is appealing and understandable for HR or non-technical stakeholders. Here's a polished README tailored for that purpose:
-
 ---
 
 # Markdown Preview Application
@@ -36,11 +34,6 @@ This project highlights my ability to:
 - **Tailwind CSS**: For styling and responsive design.
 - **Vite**: For fast and efficient development.
 - **Markdown Parser**: To render Markdown content dynamically.
-
-## Screenshots
-
-### Editor and Preview Interface
-![Markdown Preview Screenshot](https://via.placeholder.com/800x400)
 
 ## How It Works
 
