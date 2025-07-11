@@ -2,15 +2,24 @@ import { useState } from 'react';
 import './App.css';
 import Editor from './components/Editor';
 import Preview from './components/Preview';
+import Header from './components/Header';
 
 function App() {
   const [markdownInput, setMarkdownInput] = useState('');
 
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    setMarkdownInput(value);
+  };
+
   return (
     <div className="App h-screen w-full p-4 bg-slate-300">
-      <div className="main-Wrapper">
-        <Editor />
-        <Preview />
+      <div className="main-Wrapper flex flex-col  ">
+        <Header />
+        <div className="flex w-150 gap-4 ">
+          <Editor onChange={handleChange} inputValue={markdownInput} />
+          <Preview />
+        </div>
       </div>
     </div>
   );
