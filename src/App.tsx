@@ -10,6 +10,13 @@ import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
+/**
+ * Renders the main application interface for a markdown editor with live preview, syntax highlighting, and math rendering.
+ *
+ * Provides state management for markdown input, handles user input changes and example selection, and composes the editor, preview, and header components. The preview supports GitHub-flavored markdown, math expressions, and syntax-highlighted code blocks.
+ *
+ * @returns The React element representing the markdown editor application UI.
+ */
 function App() {
 	const [markdownInput, setMarkdownInput] = useState("");
 
