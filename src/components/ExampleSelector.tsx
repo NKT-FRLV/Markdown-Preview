@@ -36,7 +36,7 @@ const ExampleSelector: React.FC<ExampleSelectorProps> = ({ onSelectExample }) =>
   };
 
   return (
-    <div className="relative z-50">
+    <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-4 bg-slate-700 hover:bg-slate-600 text-slate-200 p-3 rounded-full font-medium transition-colors duration-200 border border-slate-600 shadow-md group"
@@ -50,7 +50,7 @@ const ExampleSelector: React.FC<ExampleSelectorProps> = ({ onSelectExample }) =>
       </button>
 
       {isOpen && (
-        <div className="absolute top-full  left-0 mt-2 w-80 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border-2 border-slate-700 overflow-hidden z-50">
+        <div className="absolute top-full  left-0 mt-2 w-80 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border-2 border-slate-700 overflow-hidden z-55">
           <div className="p-3 bg-gradient-to-r from-slate-700 to-slate-500 text-white">
             <h3 className="font-semibold flex items-center gap-2">
               <HiOutlineTemplate size={18} />
@@ -98,7 +98,7 @@ const ExampleSelector: React.FC<ExampleSelectorProps> = ({ onSelectExample }) =>
       {/* Overlay to close dropdown */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-40" 
+          className="fixed inset-0 z-45" 
           onClick={() => setIsOpen(false)}
         />
       )}

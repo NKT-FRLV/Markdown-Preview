@@ -1,14 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import Markdown from "react-markdown";
 import Editor from "./components/Editor";
 import Preview from "./components/Preview";
 import Header from "./components/Header";
-import remarkGfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
+import MarkdownGuide from "./components/MarkdownGuide";
 
 /**
  * Renders the main application interface for a markdown editor with live preview, syntax highlighting, and math rendering.
@@ -19,6 +14,7 @@ import rehypeKatex from "rehype-katex";
  */
 function App() {
 	const [markdownInput, setMarkdownInput] = useState("");
+	const [isGuideOpen, setIsGuideOpen] = useState(false);
 
 	const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		const value = e.target.value;
@@ -29,53 +25,34 @@ function App() {
 		setMarkdownInput(content);
 	};
 
+	const handleToggleGuide = () => {
+		setIsGuideOpen(!isGuideOpen);
+	};
+
+	const handleCloseGuide = () => {
+		setIsGuideOpen(false);
+	};
+
 	return (
 		<div className="App w-full h-full p-6 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-			<div className="main-Wrapper flex flex-col">
-				<Header onSelectExample={handleSelectExample} />
+			<div className="main-Wrapper h-full flex flex-col">
+				<Header 
+					onSelectExample={handleSelectExample} 
+					onToggleGuide={handleToggleGuide}
+				/>
 				<div className="flex w-full gap-6 flex-1 mt-6">
 					<Editor
 						onChange={handleChange}
 						inputValue={markdownInput}
 					/>
-					<Preview
-						htmlOutput={
-							markdownInput.length > 0 ? <Markdown
-								remarkPlugins={[
-									[remarkGfm, { singleTilde: false }],
-									remarkMath,
-								]}
-								rehypePlugins={[rehypeKatex]}
-								components={{
-									code(props) {
-										const { children, className } = props;
-										const match = /language-(\w+)/.exec(
-											className || ""
-										);
-										return match ? (
-											<SyntaxHighlighter
-												PreTag="div"
-												children={String(
-													children
-												).replace(/\n$/, "")}
-												language={match[1]}
-												style={dark}
-											/>
-										) : (
-											<code className={className}>
-												{children}
-											</code>
-										);
-									},
-								}}
-							>
-								{markdownInput}
-							</Markdown>
-							: null
-						}
-					/>
+					<Preview markdownContent={markdownInput} />
 				</div>
 			</div>
+			
+			<MarkdownGuide 
+				isOpen={isGuideOpen}
+				onClose={handleCloseGuide}
+			/>
 		</div>
 	);
 }
