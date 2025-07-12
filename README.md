@@ -1,6 +1,6 @@
-![Screenshot 2025-07-11 at 6 58 41 PM](https://github.com/user-attachments/assets/b3a6080a-09d3-491e-977a-d370afb4fdf5)
+![Screenshot 2025-07-11 at 6 58 41 PM](https://github.com/user-attachments/assets/968141fd-5790-4d92-8780-4dd8615bdee9)
+![Screenshot 2025-07-12 at 12 58 41 PM](https://github.com/user-attachments/assets/6895a05f-07e4-4e18-988a-879bf48a87ab)
 
----
 
 # Markdown Preview Application
 
