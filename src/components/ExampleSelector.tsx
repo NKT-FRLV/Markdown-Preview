@@ -39,7 +39,7 @@ const ExampleSelector: React.FC<ExampleSelectorProps> = ({ onSelectExample }) =>
     <div className="relative z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center will-change-transform gap-3 px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full font-medium transition-colors transition-transform duration-200 transform hover:scale-105 origin-center border border-white/30 shadow-lg relative text-sm"
+        className="flex items-center gap-4 bg-slate-700 hover:bg-slate-600 text-slate-200 p-3 rounded-full font-medium transition-colors duration-200 border border-slate-600 shadow-md group"
       >
         <HiOutlineTemplate size={20} />
         <span>{selectedExample ? selectedExample.title : 'Select example'}</span>
@@ -50,8 +50,8 @@ const ExampleSelector: React.FC<ExampleSelectorProps> = ({ onSelectExample }) =>
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border border-white/30 overflow-hidden z-50">
-          <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+        <div className="absolute top-full  left-0 mt-2 w-80 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border-2 border-slate-700 overflow-hidden z-50">
+          <div className="p-3 bg-gradient-to-r from-slate-700 to-slate-500 text-white">
             <h3 className="font-semibold flex items-center gap-2">
               <HiOutlineTemplate size={18} />
               Markdown examples
@@ -62,7 +62,7 @@ const ExampleSelector: React.FC<ExampleSelectorProps> = ({ onSelectExample }) =>
             {selectedExample && (
               <button
                 onClick={clearSelection}
-                className="w-full p-3 text-left hover:bg-red-50 transition-colors duration-200 border-b border-gray-200 text-red-600 font-medium"
+                className="w-full p-3 text-left hover:bg-slate-300 transition-colors duration-200 border-b border-gray-200 text-red-600 font-medium"
               >
                 🗑️ Clear selection
               </button>
@@ -72,12 +72,12 @@ const ExampleSelector: React.FC<ExampleSelectorProps> = ({ onSelectExample }) =>
               <button
                 key={example.id}
                 onClick={() => handleSelectExample(example)}
-                className={`w-full p-4 text-left hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-colors duration-200 border-b border-gray-100 last:border-b-0 ${
-                  selectedExample?.id === example.id ? 'bg-gradient-to-r from-purple-100 to-pink-100' : ''
+                className={`w-full p-4 text-left hover:bg-gradient-to-r hover:from-slate-200 hover:to-slate-300 transition-colors duration-200 border-b border-gray-100 last:border-b-0 ${
+                  selectedExample?.id === example.id ? 'bg-slate-300' : ''
                 }`}
               >
                 <div className="flex items-start gap-3">
-                  <div className="text-purple-600 mt-1">
+                  <div className="text-slate-600 mt-1">
                     {getIcon(example.icon)}
                   </div>
                   <div className="flex-1">
