@@ -237,9 +237,189 @@ const inspiration = {
 console.log("Keep coding! 🚀");
 \`\`\`
 
+## 🎨 UML Diagrams
+
+### Sequence Diagram
+\`\`\`mermaid
+sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    Bob-->>John: How about you John?
+    Bob--x Alice: I am good thanks!
+    Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+    Bob-->Alice: Checking with John...
+    Alice->John: Yes... John, how are you?
+\`\`\`
+
+### Flow Chart
+\`\`\`mermaid
+graph LR
+    A[Square Rect] --> B((Circle))
+    A --> C(Round Rect)
+    B --> D{Rhombus}
+    C --> D
+\`\`\`
+
 ---
 
-**#markdown #web-development #creativity #code #art**`
+**#markdown #web-development #creativity #code #art #uml #mermaid**`
+  },
+  {
+    id: 'uml-diagrams',
+    title: '📊 UML Diagrams',
+    description: 'Interactive diagrams with Mermaid',
+    icon: 'HiCollection',
+    content: `# 📊 UML Diagrams with Mermaid
+
+## 🔄 Sequence Diagram
+Perfect for showing interactions between different entities over time.
+
+\`\`\`mermaid
+sequenceDiagram
+    participant A as Alice
+    participant B as Bob
+    participant J as John
+    
+    A->>+B: Hello Bob, how are you?
+    B-->>-J: How about you John?
+    B--x A: I am good thanks!
+    B-x J: I am good thanks!
+    
+    Note right of J: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+    
+    B-->A: Checking with John...
+    A->J: Yes... John, how are you?
+    J-->>A: I'm fine, thanks!
+\`\`\`
+
+## 🌊 Flow Chart
+Great for visualizing processes and decision flows.
+
+\`\`\`mermaid
+graph TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug]
+    D --> E[Fix the issue]
+    E --> F[Test again]
+    F --> B
+    C --> G[Deploy]
+    G --> H[Monitor]
+    H --> I[End]
+\`\`\`
+
+## 🏛️ Class Diagram
+Perfect for showing object-oriented design.
+
+\`\`\`mermaid
+classDiagram
+    class Animal {
+        +String name
+        +int age
+        +speak()
+        +move()
+    }
+    
+    class Dog {
+        +String breed
+        +bark()
+        +wagTail()
+    }
+    
+    class Cat {
+        +String color
+        +meow()
+        +purr()
+    }
+    
+    class Bird {
+        +String species
+        +fly()
+        +sing()
+    }
+    
+    Animal <|-- Dog
+    Animal <|-- Cat
+    Animal <|-- Bird
+    
+    Dog : +Boolean isGoodBoy
+    Cat : +Boolean isIndependent
+    Bird : +Boolean canFly
+\`\`\`
+
+## 📅 Gantt Chart
+Excellent for project management and timelines.
+
+\`\`\`mermaid
+gantt
+    title Software Development Timeline
+    dateFormat YYYY-MM-DD
+    section Planning
+    Requirements gathering :a1, 2024-01-01, 2024-01-07
+    Design phase :a2, 2024-01-08, 2024-01-14
+    section Development
+    Backend development :a3, 2024-01-15, 2024-02-15
+    Frontend development :a4, 2024-01-25, 2024-02-25
+    Integration :a5, 2024-02-16, 2024-02-28
+    section Testing
+    Unit testing :a6, 2024-02-01, 2024-02-20
+    Integration testing :a7, 2024-02-21, 2024-03-05
+    User acceptance testing :a8, 2024-03-06, 2024-03-12
+    section Deployment
+    Production deployment :a9, 2024-03-13, 2024-03-15
+    Monitoring setup :a10, 2024-03-16, 2024-03-20
+\`\`\`
+
+## 🗺️ User Journey
+Visualize user experience and interactions.
+
+\`\`\`mermaid
+journey
+    title User Shopping Journey
+    section Discovery
+      Visit website: 5: User
+      Browse products: 4: User
+      Read reviews: 3: User
+    section Decision
+      Compare prices: 2: User
+      Add to cart: 5: User
+      Apply coupon: 4: User
+    section Purchase
+      Checkout: 3: User
+      Payment: 2: User
+      Confirmation: 5: User
+    section Post-purchase
+      Delivery tracking: 4: User
+      Receive product: 5: User
+      Leave review: 3: User
+\`\`\`
+
+## 🎯 State Diagram
+Show different states and transitions.
+
+\`\`\`mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Processing: start
+    Processing --> Success: complete
+    Processing --> Error: fail
+    Success --> Idle: reset
+    Error --> Processing: retry
+    Error --> Idle: cancel
+    Success --> [*]
+    Error --> [*]
+\`\`\`
+
+---
+
+> 💡 **Pro tip**: Mermaid diagrams are interactive and can be exported as SVG or PNG!
+
+**Features:**
+- 🎨 **Visual**: Easy to understand complex relationships
+- 📱 **Responsive**: Automatically adjusts to container size
+- 🎯 **Interactive**: Click and explore diagram elements
+- 📊 **Professional**: Perfect for documentation and presentations
+
+*Perfect for software architecture, system design, and project planning!*`
   }
 ];
 

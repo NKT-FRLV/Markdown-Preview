@@ -8,7 +8,7 @@ type EditorProps = {
 
 const Editor = ({ onChange, inputValue }: EditorProps) => {
   return (
-    <div className="w-[50%] flex-grow">
+    <div className="w-[50%] flex-grow z-45">
       <div className="w-full h-full p-4 bg-slate-700 rounded-2xl shadow-lg border border-slate-600 hover:shadow-xl transition-all duration-300">
         <div className="mb-3">
           <h3 className="text-slate-100 text-lg font-semibold flex items-center gap-2">
@@ -16,9 +16,9 @@ const Editor = ({ onChange, inputValue }: EditorProps) => {
             Editor
           </h3>
         </div>
-        <div className="w-full h-[calc(100%-60px)] flex-1 relative">
+        <div className="w-full h-full flex-1 relative">
           <textarea
-            className="w-full h-full min-h-[400px] rounded-xl p-4 bg-white border-0 resize-none focus:outline-none focus:ring-2 focus:ring-slate-400 focus:bg-gray-50 transition-all duration-300 shadow-inner text-gray-800 placeholder-gray-500 hover:bg-gray-50"
+            className="w-full min-h-[90%] rounded-xl p-4 bg-white border-0 resize-none focus:outline-none focus:ring-2 focus:ring-slate-400 focus:bg-gray-50 transition-all duration-300 shadow-inner text-gray-800 placeholder-gray-500 hover:bg-gray-50"
             value={inputValue}
             onChange={onChange}
             placeholder="Start writing your Markdown..."
