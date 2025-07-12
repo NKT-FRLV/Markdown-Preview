@@ -65,12 +65,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  background: linear-gradient(45deg, #725cff, #6341ca);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #ff5252, #ffb74d);
+  background: linear-gradient(45deg, #725cff, #6341ca);
 }
 
 /* Стили для Markdown */
